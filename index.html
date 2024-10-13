@@ -1,321 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- box icon -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- remix icon -->
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/font-size/font-size.css">
-    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/utilities/padding/padding.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
-            h1, .nav__logo{
-                font-family: "Protest Strike", sans-serif;
-                font-weight: 400;
-                font-style: normal;
+    <title>About Us - Trendy Fashion Destination</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e3e3e3;
+            color: #E2F1E7;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        header {
+            background-color: #629584;
+            color: #E2F1E7;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #629584;
+            animation: slideDown 1s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        section {
+            margin-top: 50px;
+            padding: 40px;
+            background-color: #629584;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        section:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+
+        section h2 {
+            color: #E2F1E7;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            animation: textSlideIn 1.2s ease-in-out forwards;
+        }
+
+        section p {
+            color: #E2F1E7;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInText 1s ease-in forwards;
+        }
+
+        .cta-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cta-box {
+            flex: 1;
+            min-width: 280px;
+            padding: 30px;
+            background-color: #444f4dbf;
+            color: #E2F1E7;
+            text-align: center;
+            border-radius: 10px;
+            transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+            opacity: 0;
+            animation: fadeIn 1.2s ease-in forwards;
+            animation-delay: 0.7s;
+        }
+
+        .cta-box h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            animation: rotateIn 1.5s ease-in-out forwards;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            opacity: 0;
+            animation: fadeInText 1.5s ease-in forwards;
+        }
+
+        .cta-box:hover {
+            background-color: #387478;
+            transform: translateY(-10px);
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-box button {
+            margin-top: 15px;
+            padding: 12px 24px;
+            background-color: #243642;
+            color: #E2F1E7;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: slideUp 1.5s ease forwards;
+        }
+
+        .cta-box button:hover {
+            background-color: #629584;
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            background-color: #243642;
+            color: #E2F1E7;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+            animation-delay: 1s;
+        }
+
+        .nav-links a {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #387478;
+            transform: translateY(-3px);
+        }
+
+        .dropdown-menu a {
+            transition: background-color 0.4s ease, transform 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #629584;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
-        </style>
-            
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes textSlideIn {
+            from {
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                transform: rotate(-180deg);
+                opacity: 0;
+            }
+            to {
+                transform: rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 20px;
+            }
+
+            .cta-box {
+                min-width: 100%;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        header {
+            background-color: #243642;
+            padding: 20px 40px;
+            border-bottom: 1px solid #629584;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #E2F1E7;
+            animation: zoomIn 1.5s ease-in-out;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #E2F1E7;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #387478;
+            transform: translateY(-3px);
+        }
+
+        .page-title {
+            text-align: center;
+            background-color: #387478;
+            padding: 30px 0;
+            color: #E2F1E7;
+            font-size: 2.5rem;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 1.2s ease-in forwards;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: #243642;
+            border-radius: 5px;
+            padding: 10px 0;
+            z-index: 999;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: #E2F1E7;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
 </head>
+
 <body>
-    <!-- nav bar start -->
-    <header class="header" id="header">
-        <nav class="nav container">
-           <a href="#" class="nav__logo">MetroThreads</a>
-
-           <div class="nav__menu" id="nav-menu">
-              <ul class="nav__list">
-                 <li class="nav__item"><a href="#products" class="nav__link">Mens</a></li>
-                 <li class="nav__item"><a href="#products" class="nav__link">Womens</a></li>
-                 <li class="nav__item"><a href="#products" class="nav__link">Kids</a></li>
-                 <li class="nav__item"><a href="#products" class="nav__link">About Us</a></li>
-              </ul>
-
-              <div class="nav__close" id="nav-close">
-                <img src="x-regular-24.png" alt="" height="50px" width="50px" style="margin-top: -15px;">
-              </div>
-           </div>
-
-           <div class="nav__actions">
-              <img src="cart-regular-24.png" alt="" height="30px" width="30px" style="margin-top: -15px;">
-
-              <div class="nav__toggle" id="nav-toggle">
-                 <img src="menu-alt-right-regular-24.png" alt=""height="30px" width="30px" style="margin-top: -15px;">
-              </div>
-           </div>
-        </nav>
-  </header>
-    <!-- nav bar end -->
-
-    <!-- hero section start -->
-    <div class="container-fluid p-0">
-        <!-- Product Slider -->
-        <div id="product-slider" class="carousel slide" data-bs-ride="carousel">
-            <!-- Indicators -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#product-slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#product-slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#product-slider" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#product-slider" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#product-slider" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            </div>
-
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://juniperfashion.com/cdn/shop/files/Juniper_Fashion_Banner_2_-_Desktop_751c255a-193d-42a3-8850-1faf6fc81cb5.webp?v=1725968642&width=1600" alt="Fashion Item 1">
-                    <div class="carousel-caption d-none d-md-block">
+    <header>
+        <div class="nav-bar">
+            <div class="logo">YourLogo</div>
+            <nav class="nav-links" id="nav-links">
+                <a href="#">Home</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle">Fashion</a>
+                    <div class="dropdown-menu">
+                        <a href="mens.html">Men</a>
+                        <a href="woman.html">Women</a>
+                        <a href="kids.html">Kids</a>
+                        <a href="shopping.html">Accessories</a>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <img src="https://jacketmaker.co/wp-content/uploads/2024/04/Banner.png" alt="Fashion Item 4">
-                    <div class="carousel-caption d-none d-md-block">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/MA2024/GW/Jupiter/Phase2/Unrec/56._CB544896570_.jpg" alt="Fashion Item 2">
-                    <div class="carousel-caption d-none d-md-block">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://assets.ajio.com/cms/AJIO/WEB/D-1.0-UHP-13102024-MainBanners-Z1-P-trends-altheory-outryt-min70.jpg" alt="Fashion Item 3">
-                    <div class="carousel-caption d-none d-md-block">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://i.ytimg.com/vi/NTqrUU-i2n4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDPlv8fUSwelPyxcA9QhyHyl1sQGA" alt="Fashion Item 5">
-                    <div class="carousel-caption d-none d-md-block">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Left and right controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#product-slider" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#product-slider" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+                <a href="index.html">About Us</a>
+                <a href="#">Contact</a>
+            </nav>
         </div>
-    </div>
+    </header>
+    <section class="page-title">
+        About Us
+    </section>
 
-    <!-- hero section end -->
+    <div class="container">
+        <section>
+            <h2>Who We Are</h2>
+            <p>Welcome to your go-to online fashion destination for trendsetters and style enthusiasts. We offer an extensive range of fashionable clothing, shoes, and accessories for men, women, and kids. Our mission is to provide top-quality fashion choices that inspire confidence, creativity, and individuality.</p>
+        </section>
 
-    <!-- categories slider start -->
-    <div id="products">
-        <section id="products" class="products">
-            <h1 class="text-center my-4">Categories</h1>
-            <div class="product-category">
-                <div class="wide-sizea mens">
-                    <span class="product-text">
-                        <a href="mens.html" name="Mens">Mens</a>
-                    </span>
+        <section>
+            <h2>Our Vision</h2>
+            <p>Fashion should be accessible to everyone, which is why we constantly update our collections to include the latest styles and trends. From casual wear to evening outfits, we have something for every occasion and every personality.</p>
+        </section>
+
+        <section>
+            <h2>Explore Our World</h2>
+            <div class="cta-section">
+                <div class="cta-box">
+                    <h3>For Women</h3>
+                    <p>Discover the latest trends in women’s fashion, from chic dresses to stylish outerwear.</p>
+                    <a href="homepage.html">
+                        <button>Shop Now</button>
+                    </a>
                 </div>
-    
-                <div class="normal-sizea">
-                    <div class="normal-size boys">
-                        <span class="product-text">
-                            <a href="kids.html" name="Boys">Boys</a>
-                        </span>
-                    </div>
-    
-                    <div class="normal-size girls">
-                        <span class="product-text">
-                            <a href="kids.html" name="Girls">Girls</a>
-                        </span>
-                    </div>
+
+                <div class="cta-box">
+                    <h3>For Men</h3>
+                    <p>Update your wardrobe with our collection of men’s fashion, from smart casual to street style.</p>
+                    <a href="homepage.html">
+                        <button>Shop Now</button>
+                    </a>
                 </div>
-    
-                <div class="normal-sizeb">
-                    <div class="normal-size trends">
-                        <span class="product-text">
-                            <a href="#" name="Trends">Trends</a>
-                        </span>
-                    </div>
-                    <div class="normal-size sale">
-                        <span class="product-text">
-                            <a href="#" name="Sale">Sale</a>
-                        </span>
-                    </div>
-                </div>
-    
-                <div class="wide-sizeb womens">
-                    <span class="product-text">
-                        <a href="womens.html" name="Womens">Womens</a>
-                    </span>
+
+                <div class="cta-box">
+                    <h3>For Kids</h3>
+                    <p>Dress your little ones in stylish and comfortable clothing for every occasion.</p>
+                    <a href="homepage.html">
+                        <button>Shop Now</button>
+                    </a>
                 </div>
             </div>
         </section>
-    <!-- categories slider end -->
-
-    <!-- offers for you start -->
-
-    <!-- offers for you end -->
-
-    <!-- testimonials start -->
-    <div class="container py-4">
-        <h1 class="text-center my-4">Testimonials</h1>
-    
-        <div class="row mt-4">
-            <div class="col-md-8 offset-md-2">
-                <div class="lc-block">
-                    <div id="testimonial-slider" class="carousel slide" data-bs-ride="carousel">
-    
-                        <!-- Indicators -->
-                        <ul class="carousel-indicators list-unstyled">
-                            <li data-bs-target="#testimonial-slider" data-bs-slide-to="0" class="active"></li>
-                            <li data-bs-target="#testimonial-slider" data-bs-slide-to="1"></li>
-                            <li data-bs-target="#testimonial-slider" data-bs-slide-to="2"></li>
-                        </ul>
-    
-                        <!-- The slideshow -->
-                        <div class="carousel-inner">
-                            <div class="carousel-item ">
-                                <div class="overlay"></div>
-                                <img src="https://images.unsplash.com/photo-1445053023192-8d45cb66099d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Photo by Christopher Campbell">
-                                <div class="carousel-caption text-white">
-                                    <p editable="inline">"I absolutely love the unique styles offered by this shop! Every piece I’ve purchased has turned heads and sparked compliments. The quality is fantastic, and the customer service is top-notch. Highly recommend!"&nbsp;</p>
-                                    <h5 editable="inline"><strong>Sarah Thompson</strong></h5>
-                                </div>
-    
-    
-                            </div>
-                            <div class="carousel-item active">
-                                <div class="overlay"></div>
-                                <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;h=768&amp;fit=crop&amp;ixid=eyJhcHBfaWQiOjM3ODR9" alt="Photo by averie woodard">
-                                <div class="carousel-caption text-white">
-                                    <p editable="inline">"Shopping here has transformed my wardrobe! The clothing is not only stylish but also incredibly comfortable. I appreciate the variety and how every item feels special. Can't wait to shop again!"&nbsp;</p>
-                                    <h5 editable="inline"><strong>Eddie Valiant</strong></h5>
-                                </div>
-    
-    
-                            </div>
-                            <div class="carousel-item ">
-                                <div class="overlay"></div>
-                                <img src="https://images.unsplash.com/photo-1471017851983-fc49d89c57c2?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;h=768&amp;fit=crop&amp;ixid=eyJhcHBfaWQiOjM3ODR9" alt="Photo by Jens Lindner">
-                                <div class="carousel-caption text-white">
-                                    <p editable="inline">"This store is my go-to for all things fashion! I love how easy it is to find trendy pieces that fit my style perfectly. Plus, the fast shipping means I get my new outfits in no time!"&nbsp;</p>
-                                    <h5 editable="inline"><strong>Emily Chen</strong></h5>
-                                </div>
-    
-    
-                            </div>
-    
-                        </div>
-    
-                        <!-- Left and right controls -->
-                        <a class="carousel-control-prev" href="#testimonial-slider" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#testimonial-slider" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </a>
-    
-                    </div>
-                </div>
-            </div><!-- /col -->
-        </div>
     </div>
-    <!-- testimonials end -->
 
-    <!-- footer start -->
-<footer class="footer">
-    <section class="bg-light py-4 py-md-5 py-xl-8 border-top border-light">
-      <div class="container overflow-hidden" >
-        <div class="row gy-4 gy-lg-0 justify-content-xl-between">
-          <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-            <div class="widget">
-              <a href="#!"><img src="MT.png" alt="BootstrapBrain Logo" width="175" ></a>
-            </div>
-          </div>
-          <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-            <div class="widget">
-              <h4 class="widget-title mb-4">Get in Touch</h4>
-              <address class="mb-4">UIT, RGPV, Nashinghad By-pass, Bhopal, M.P.</address>
-              <p class="mb-1">
-                <a class="link-secondary text-decoration-none" href="tel:+15057922430">0755 420 1920</a>
-              </p>
-              <p class="mb-0">
-                <a class="link-secondary text-decoration-none" href="mailto:demo@yourdomain.com">support@metrothreads.com</a>
-              </p>
-            </div>
-          </div>
-          <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-            <div class="widget">
-              <h4 class="widget-title mb-4">Quick Links</h4>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <a href="mens.html" class="link-secondary text-decoration-none">Mens</a>
-                </li>
-                <li class="mb-2">
-                  <a href="womens.html" class="link-secondary text-decoration-none">Womens</a>
-                </li>
-                <li class="mb-2">
-                  <a href="kids.html" class="link-secondary text-decoration-none">Kids</a>
-                </li>
-                <li class="mb-2">
-                    <a href="#!" class="link-secondary text-decoration-none">About Us</a>
-                  </li>
-                <li class="mb-2">
-                  <a href="#!" class="link-secondary text-decoration-none">Terms of Service</a>
-                </li>
-                <li class="mb-0">
-                  <a href="#!" class="link-secondary text-decoration-none">Privacy Policy</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-12 col-lg-3 col-xl-4">
-            <div class="widget">
-              <h4 class="widget-title mb-4">Our Newsletter</h4>
-              <p class="mb-4">Subscribe to our newsletter to get our news & discounts delivered to you.</p>
-              <form action="#!">
-                <div class="row gy-4">
-                  <div class="col-12">
-                    <div class="input-group">
-                      <span class="input-group-text" id="email-newsletter-addon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
-                        </svg>
-                      </span>
-                      <input type="email" class="form-control" id="email-newsletter" value="" placeholder="Email Address" aria-label="email-newsletter" aria-describedby="email-newsletter-addon" required>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="d-grid">
-                      <button class="btn btn-primary" type="submit" style="background-color: #629584; border:none">Subscribe</button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  <!-- copyrright -->
-  <div class="copybox" style="background-color: #629584; height: 40px;">
-    <p style="margin: 10px; padding: 5px;">Copyright &copy; 2024 All Rights Reserved.</p>
-   </div>
-  </footer>
-
-    <!-- footer end -->
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <footer>
+        <p>&copy; 2024 Trendy Fashion Destination. All rights reserved.</p>
+    </footer>
 </body>
+
 </html>
