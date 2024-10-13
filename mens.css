@@ -195,14 +195,17 @@ body {
 
 .clothing{
     display: flex;
+    justify-content: center;
 }
 
 .accessories{
     display: flex;
+    justify-content: center;
 }
 
 .footwear{
     display: flex;
+    justify-content: center;
 }
 
 .card .btn{
