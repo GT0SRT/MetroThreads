@@ -113,7 +113,7 @@ body {
   position: fixed;
   top: 0;
   right: -120%;
-  background-color: hsla(126, 80%, 16%, 0.6);
+  background-color: #6295843e;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   width: 100%;
@@ -165,7 +165,7 @@ body {
   position: absolute;
   width: 1000%;
   height: 100%;
-  background-color: hsla(228, 24%, 6%, .6);
+  background-color: #6295843e;
   backdrop-filter: blur(16px) ;
   -webkit-backdrop-filter: blur(16px); 
   top: 0;
@@ -203,6 +203,14 @@ body {
 .container-fluid .carousel-item h1{
     color: #629584;
     font-weight: 700;
+}
+
+@media screen and (max-width:1150px){
+    .container-fluid .carousel-item{
+        height: 30vh;
+        margin-top: 40px;
+        border-radius: 0;
+    }
 }
 
 /* hero css end */
