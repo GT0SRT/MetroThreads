@@ -55,7 +55,7 @@ body {
     color: white;
     cursor: pointer;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.2rem;
   }
 
   .nav__logo{
@@ -120,13 +120,14 @@ body {
   /* height: 250px; */
   /* padding: 6rem 3rem 0; */
   transition: right .4s;
+  font-size: 9rem;
   }
   
   .nav__menu{
     margin: 0;
     padding: 0;
+    margin-left: 840px;
   }
-  
   
   .nav__menu .nav__list{
   display: flex;
@@ -149,9 +150,7 @@ body {
   
   .nav__close{
   position: absolute;
-  top: 1.15rem;
-  right: 1.5rem;
-  font-size: 1.25rem;
+  font-size: 3.25rem;
   }
   
   /* Show menu */
@@ -176,6 +175,10 @@ body {
   /* Active link */
   .active-link{
   color: var(--first-color);
+  }
+
+  .nav__logo{
+    margin-left: 10px;
   }
   
   }
@@ -229,7 +232,7 @@ body {
 }
 .one{
   display: flex;
-    margin-left:10px;
+  margin-left: 7px;
 }
 }
 
