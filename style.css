@@ -150,8 +150,6 @@ body {
   
   .nav__close{
   position: absolute;
-  top: 1.15rem;
-  right: 1.5rem;
   font-size: 3.25rem;
   }
   
@@ -377,7 +375,7 @@ body {
   
   /* mobile */
   .card{
-    width: 18rem;
+    width: 25em;
     height: 20rem;
     /* margin: 2rem; */
     box-shadow: 32px 64px 128px var(--bg-color);
@@ -406,19 +404,7 @@ body {
   border-color: #e0e0e0;
   color: #000;
   }
-  
-  .mobile{
-    align-items: center;
-    justify-content: center;
-    margin-top: 250px;
-  }
-  
-  @media(min-width: 950px) {
-    .mobile{
-      display: none;
-    }
-  }
-  
+
   .carousel-caption{
     position: relative;
     z-index: 2;
