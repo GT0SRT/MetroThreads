@@ -215,6 +215,10 @@ body {
 
 }
 
+.one{
+  display: flex;
+}
+
 .card img{
     height: 200px;
 }
@@ -222,7 +226,9 @@ body {
 @media screen and (max-width:1150px){
   .clothing, .accessories, .footwear{
     display: block;
-    margin-left: 25vw;
+}
+.one{
+  display: flex;
 }
 }
 
