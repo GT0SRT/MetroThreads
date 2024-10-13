@@ -1,0 +1,303 @@
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gilroy';
+    box-sizing: border-box;
+  }
+
+body {
+  margin: 0;
+  /* font-family: Arial, sans-serif; */
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --main-color: #629584;
+}
+
+/* ṇav bar css start */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    background: #629584;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+  }
+  
+  .nav{
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .nav__logo,
+  .nav__item,
+  .nav__close,
+  .nav__toggle,
+  .nav__actions{
+    display: flex;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  .nav__logo{
+    margin-top: -12px;
+  }
+  
+  .nav__menu{
+    margin-right: 0;
+    margin-left: 580px;
+    margin-top: 0;
+  }
+  
+  .nav__list a{
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    margin-right: 0;
+    color: white;
+  }
+  
+  .nav__menu .nav__list{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .nav__list .active-link, .nav__item a:hover{
+    color: Black;
+  }
+  
+  .nav__close, .nav__toggle{
+    display: none;
+  }
+  
+  .nav__logo{
+    font-weight: var(--font-semi-bold);
+    column-gap: .25rem;
+    align-items: center;
+    padding: 5px;
+  }
+  
+   .nav__actions{
+      font-size: 1.25rem;
+      column-gap: .5rem;
+      align-items: center;
+   }
+  
+  
+  /* Navigation for mobile devices */
+  @media screen and (max-width:1150px){
+    .nav__close, .nav__toggle{
+      display: block;
+    }
+  
+  .nav__menu{
+  position: fixed;
+  top: 0;
+  right: -120%;
+  background-color: #6295843e;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
+  /* height: 250px; */
+  /* padding: 6rem 3rem 0; */
+  transition: right .4s;
+  font-size: 9rem;
+  }
+  
+  .nav__menu{
+    margin: 0;
+    padding: 0;
+    margin-left: 840px;
+  }
+  
+  .nav__menu .nav__list{
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .nav__item a{
+    padding: 5px;
+  }
+  
+  .nav__link{
+  color: white;
+  font-weight: var(--font-semi-bold);
+  transition: color .4s;
+  }
+  
+  .nav__link:hover{
+  color: var(--first-color);
+  }
+  
+  .nav__close{
+  position: absolute;
+  top: 1.15rem;
+  right: 1.5rem;
+  font-size: 3.25rem;
+  }
+  
+  /* Show menu */
+  .show-menu{
+  right: 0;
+  }
+  
+  /* Add blur header */
+  .scroll-header::after{
+  content: '';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: #6295843e;
+  backdrop-filter: blur(16px) ;
+  -webkit-backdrop-filter: blur(16px); 
+  top: 0;
+  left: 0;
+  z-index: -1;
+  }
+  
+  /* Active link */
+  .active-link{
+  color: var(--first-color);
+  }
+
+  .nav__logo{
+    margin-left: 10px;
+  }
+  
+  }
+
+/* nav bar css end */
+
+.form-container {
+    background-color: #2C3E50;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.2s ease-in forwards;
+    max-width: 450px;
+    width: 100%;
+    transition: transform 0.3s ease;
+    align-self: center;
+    margin-top: 100px;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #E2F1E7;
+    animation: zoomIn 1.5s ease-in-out;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #34495E;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    background-color: #629584;
+    outline: none;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(50, 100, 150, 0.5);
+}
+
+button {
+    padding: 12px;
+    background-color: #387478;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #62a89c;
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links a {
+    color: #62a89c;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+.links a:hover {
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@media(max-width:500px){
+    .form-container{
+        width: 300px;
+    }
+}
