@@ -239,6 +239,7 @@ body {
 @media screen and (max-width:1150px){
   .clothing, .accessories, .footwear{
     display: block;
+      align-self: center;
 }
 .one{
   display: flex;
