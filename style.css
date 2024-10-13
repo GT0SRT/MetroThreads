@@ -1,0 +1,435 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gilroy';
+    box-sizing: border-box;
+  }
+
+body {
+  margin: 0;
+  /* font-family: Arial, sans-serif; */
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --main-color: #629584;
+}
+
+/* ṇav bar css start */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    background: #629584;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+  }
+  
+  .nav{
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .nav__logo,
+  .nav__item,
+  .nav__close,
+  .nav__toggle,
+  .nav__actions{
+    display: flex;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .nav__logo{
+    margin-top: -8px;
+  }
+  
+  .nav__menu{
+    margin-right: 0;
+    margin-left: 580px;
+    margin-top: 0;
+  }
+  
+  .nav__list a{
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    margin-right: 0;
+    color: white;
+  }
+  
+  .nav__menu .nav__list{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .nav__list .active-link, .nav__item a:hover{
+    color: Black;
+  }
+  
+  .nav__close, .nav__toggle{
+    display: none;
+  }
+  
+  .nav__logo{
+    font-weight: var(--font-semi-bold);
+    column-gap: .25rem;
+    align-items: center;
+    padding: 5px;
+  }
+  
+   .nav__actions{
+      font-size: 1.25rem;
+      column-gap: .5rem;
+      align-items: center;
+   }
+  
+  
+  /* Navigation for mobile devices */
+  @media screen and (max-width:1150px){
+    .nav__close, .nav__toggle{
+      display: block;
+    }
+  
+  .nav__menu{
+  position: fixed;
+  top: 0;
+  right: -120%;
+  background-color: hsla(126, 80%, 16%, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
+  /* height: 250px; */
+  /* padding: 6rem 3rem 0; */
+  transition: right .4s;
+  }
+  
+  .nav__menu{
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .nav__menu .nav__list{
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .nav__item a{
+    padding: 5px;
+  }
+  
+  .nav__link{
+  color: white;
+  font-weight: var(--font-semi-bold);
+  transition: color .4s;
+  }
+  
+  .nav__link:hover{
+  color: var(--first-color);
+  }
+  
+  .nav__close{
+  position: absolute;
+  top: 1.15rem;
+  right: 1.5rem;
+  font-size: 1.25rem;
+  }
+  
+  /* Show menu */
+  .show-menu{
+  right: 0;
+  }
+  
+  /* Add blur header */
+  .scroll-header::after{
+  content: '';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(228, 24%, 6%, .6);
+  backdrop-filter: blur(16px) ;
+  -webkit-backdrop-filter: blur(16px); 
+  top: 0;
+  left: 0;
+  z-index: -1;
+  }
+  
+  /* Active link */
+  .active-link{
+  color: var(--first-color);
+  }
+  
+  }
+
+/* nav bar css end */
+
+/* hero css start */
+
+.container-fluid .carousel-item{
+    height: 95vh;
+    margin-top: 40px;
+    border-radius: 0;
+}
+.container-fluid .carousel-item img{
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container-fluid .carousel-item .btn{
+    background-color: var(--main-color);
+    border: none;
+}
+
+.container-fluid .carousel-item h1{
+    color: #629584;
+    font-weight: 700;
+}
+
+/* hero css end */
+
+/* categories css start */
+
+.product-category {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 50vw;
+    min-width: 400px;
+}
+
+.product-text {
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+}
+
+.product-text a {
+    color: #fff;
+}
+
+.product-text a:hover {
+    color: var(--main-color);
+}
+
+.wide-sizea {
+    flex: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wide-sizeb {
+    flex: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wide-sizea, .normal-sizea {
+    border-bottom: 5px solid #fff;
+}
+
+.wide-sizeb, .normal-sizeb {
+    border-top: 5px solid #fff;
+}
+
+.wide-sizea, .normal-sizeb {
+    border-right: 5px solid #fff;
+}
+
+.wide-sizeb, .normal-sizea {
+    border-left: 5px solid #fff;
+}
+
+.normal-size {
+    max-width: 50%; 
+    flex: 45%;
+}
+
+.normal-sizea {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 45%;
+}
+
+.normal-sizeb {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 45%;
+}
+
+.mens {
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0, rgba(0,0,0,0.3)), url('https://www.derek-rose.com/cdn/shop/articles/5-1.jpg?v=1688657928'), no-repeat 50%;
+    background-size: cover, cover;
+}
+
+.boys {
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0, rgba(0,0,0,0.3)), url('https://www.pinkblueindia.com/blog/wp-content/uploads/2017/03/bright-color-boys-shirt.jpg'), no-repeat 50%;
+    background-size: cover, cover;
+    border-right: 5px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.girls {
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0, rgba(0,0,0,0.3)), url('https://images.meesho.com/images/products/318803029/3oxod_512.webp'), no-repeat 50%;
+    background-size: cover, cover;
+    border-left: 5px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sale {
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0, rgba(0,0,0,0.5)), url('https://c.ndtvimg.com/2021-04/8dgceh18_fashion-sale650_625x300_01_April_21.jpg'), no-repeat 50%;
+    background-size: cover, cover;
+    border-left: 5px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trends {
+    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0, rgba(0,0,0,0.4)), url('https://theglamandglitter.com/wp-content/uploads/2024/01/SS24-Trends.jpg'), no-repeat 50%;
+    background-size: cover, cover;
+    border-right: 5px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.womens {
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0, rgba(0,0,0,0.3)), url('https://images.pexels.com/photos/1462637/pexels-photo-1462637.jpeg?cs=srgb&dl=pexels-anastasiya-gepp-654466-1462637.jpg&fm=jpg'), no-repeat 50%;
+    background-size: cover, cover;
+}
+    
+/* categories css end */
+
+/* testimonials start*/
+
+.carousel-item{
+    height: 420px;
+    border-radius: 10px;
+  }
+  
+  .carousel-item img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  @media screen and (max-width:1150px){
+    .carousel-item{
+      height: 320px;
+    }
+    .lane, .end{
+      display: none;
+    }
+    .hero{
+      display: none;
+    }
+    .mobile .card{
+      width: 14rem;
+      margin-left: 25%;
+      box-shadow: 32px 64px 128px var(--bg-color);
+    }
+  }
+  
+  /* mobile */
+  .card{
+    width: 18rem;
+    height: 20rem;
+    /* margin: 2rem; */
+    box-shadow: 32px 64px 128px var(--bg-color);
+  }
+  
+  .hero .card1,.innercard{
+    box-shadow: 0 32px 64px var(--bg-color);
+    background: transparent;
+  }
+  
+  .card .btn{
+    background-color: var(--bg-color);
+    border-color: var(--bg-color);
+  }
+  
+  .card-body p{
+    font-size: 12px;
+  }
+  
+  .card-title{
+    padding: 10px;
+  }
+  
+  .card .btn:hover{
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
+  color: #000;
+  }
+  
+  .mobile{
+    align-items: center;
+    justify-content: center;
+    margin-top: 250px;
+  }
+  
+  @media(min-width: 950px) {
+    .mobile{
+      display: none;
+    }
+  }
+  
+  .carousel-caption{
+    position: relative;
+    z-index: 2;
+    color: white;
+  }
+  
+  .overlay{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+  }
+
+  /* testimonials end */
+
+
+  /* footer css start */
+
+ .footer .copybox{
+    height: 20px;
+  }
+
+  /* footer css end */
