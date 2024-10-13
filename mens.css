@@ -229,6 +229,7 @@ body {
 }
 .one{
   display: flex;
+    margin-left:20px;
 }
 }
 
