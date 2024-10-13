@@ -1,0 +1,221 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gilroy';
+    box-sizing: border-box;
+  }
+
+body {
+  margin: 0;
+  /* font-family: Arial, sans-serif; */
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --main-color: #629584;
+}
+
+/* ṇav bar css start */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    background: #629584;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+  }
+  
+  .nav{
+    position: relative;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .nav__logo,
+  .nav__item,
+  .nav__close,
+  .nav__toggle,
+  .nav__actions{
+    display: flex;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .nav__logo{
+    margin-top: -12px;
+  }
+  
+  .nav__menu{
+    margin-right: 0;
+    margin-left: 580px;
+    margin-top: 0;
+  }
+  
+  .nav__list a{
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+    margin-right: 0;
+    color: white;
+  }
+  
+  .nav__menu .nav__list{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .nav__list .active-link, .nav__item a:hover{
+    color: Black;
+  }
+  
+  .nav__close, .nav__toggle{
+    display: none;
+  }
+  
+  .nav__logo{
+    font-weight: var(--font-semi-bold);
+    column-gap: .25rem;
+    align-items: center;
+    padding: 5px;
+  }
+  
+   .nav__actions{
+      font-size: 1.25rem;
+      column-gap: .5rem;
+      align-items: center;
+   }
+  
+  
+  /* Navigation for mobile devices */
+  @media screen and (max-width:1150px){
+    .nav__close, .nav__toggle{
+      display: block;
+    }
+  
+  .nav__menu{
+  position: fixed;
+  top: 0;
+  right: -120%;
+  background-color: hsla(126, 80%, 16%, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
+  /* height: 250px; */
+  /* padding: 6rem 3rem 0; */
+  transition: right .4s;
+  }
+  
+  .nav__menu{
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .nav__menu .nav__list{
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .nav__item a{
+    padding: 5px;
+  }
+  
+  .nav__link{
+  color: white;
+  font-weight: var(--font-semi-bold);
+  transition: color .4s;
+  }
+  
+  .nav__link:hover{
+  color: var(--first-color);
+  }
+  
+  .nav__close{
+  position: absolute;
+  top: 1.15rem;
+  right: 1.5rem;
+  font-size: 1.25rem;
+  }
+  
+  /* Show menu */
+  .show-menu{
+  right: 0;
+  }
+  
+  /* Add blur header */
+  .scroll-header::after{
+  content: '';
+  position: absolute;
+  width: 1000%;
+  height: 100%;
+  background-color: hsla(228, 24%, 6%, .6);
+  backdrop-filter: blur(16px) ;
+  -webkit-backdrop-filter: blur(16px); 
+  top: 0;
+  left: 0;
+  z-index: -1;
+  }
+  
+  /* Active link */
+  .active-link{
+  color: var(--first-color);
+  }
+  
+  }
+
+/* nav bar css end */
+
+
+/* main css start */
+.tophead{
+    margin-top: 70px;
+}
+
+.clothing{
+    display: flex;
+}
+
+.accessories{
+    display: flex;
+}
+
+.footwear{
+    display: flex;
+}
+
+.card .btn{
+    background-color: #629584;
+    border: 2px solid var(--main-color);
+}
+.card .btn:hover{
+    background-color: white;
+    border: 2px solid var(--main-color);
+    color: black;
+}
+
+.card{
+    margin: 10px;
+
+}
+
+.card img{
+    height: 200px;
+}
+/* main css end */
