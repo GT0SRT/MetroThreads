@@ -220,6 +220,11 @@ body {
 
 }
 
+.card:hover{
+  background-color: rgba(143, 140, 140, 0.251);
+  box-shadow: 3px 3px #62958487;
+}
+
 .one{
   display: flex;
 }
@@ -234,7 +239,7 @@ body {
 }
 .one{
   display: flex;
-  margin-left: 10px;
+  margin-left: 0.5rem;
 }
 }
 
