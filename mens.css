@@ -150,6 +150,8 @@ body {
   
   .nav__close{
   position: absolute;
+  top: 1.15rem;
+  right: 1.5rem;
   font-size: 3.25rem;
   }
   
@@ -232,7 +234,7 @@ body {
 }
 .one{
   display: flex;
-  margin-left: 7px;
+  margin-left: 10px;
 }
 }
 
